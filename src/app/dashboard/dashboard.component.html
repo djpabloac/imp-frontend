@@ -1,0 +1,19 @@
+<h1>Productos creados:</h1>
+<h3>{{count || 0}}</h3>
+
+<h1>Productos por:</h1>
+<h3>Categoria</h3>
+<ul>
+    <li *ngFor="let category of categories">
+        {{category.argument}}: {{category.count}}
+    </li>
+</ul>
+
+<h3>Estado</h3>
+<ul>
+    <li *ngFor="let state of status">
+        {{state.argument}}: {{state.count}}
+    </li>
+</ul>
+
+<canvas id="categories" width="400" height="400"></canvas>

@@ -1,0 +1,50 @@
+<div class="cards" *ngIf="loading">
+    <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+
+<div class="cards" *ngIf="!loading">
+    <mat-card class="product-card">
+        <mat-card-header>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-subtitle>{{product.partNumber}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider inset></mat-divider>
+        <img mat-card-image src="{{product.photo450}}" alt="{{product.name}}">
+        <mat-card-content>
+            <p>
+                Categoria: <strong>{{product.category?.name}}</strong>
+            </p>
+            <p>
+                Linea: <strong>{{product.line?.name}}</strong>
+            </p>
+            <p>
+                Marca: <strong>{{product.mark}}</strong>
+            </p>
+            <p>
+                Código: <strong>{{product.code}}</strong>
+            </p>
+            <p>
+                Código del proveedor: <strong>{{product.businessPartner}}</strong>
+            </p>
+            <p>
+                Tipo de fabricante: <strong>{{product.manufacturerType}}</strong>
+            </p>
+            <p>
+                UEN: <strong>{{product.uen}}</strong>
+            </p>
+            <p>
+                Estado: <strong>{{product.status}}</strong>
+            </p>
+            <p>
+                {{product.description}}
+            </p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+            <button mat-button (click)="goBack()">Atrás</button>
+            <div class="product-card-title">{{product.price | currency: 'PEN' : 'symbol' : '1.0-0'}}</div>
+        </mat-card-actions>
+    </mat-card>
+
+</div>

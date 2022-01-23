@@ -1,0 +1,14 @@
+.mat-toolbar {
+    top: 0;
+    position: fixed;
+    z-index: 99999;
+}
+
+.ng-component {
+    margin-top: 64px;
+    padding: 12px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,38 @@
+<div class="cards">
+    <mat-form-field class="product-form-field" appearance="fill">
+        <mat-label>Buscar producto por nombre</mat-label>
+        <input matInput type="text" [(ngModel)]="search" (keydown.enter)="getProducts()">
+        <button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+          <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
+
+<div class="cards" *ngIf="loading">
+    <mat-progress-spinner class="example-margin" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</div>
+
+<div class="cards" *ngIf="!loading">
+
+    <div class="cards__item" *ngFor="let product of products">
+        <mat-card class="product-card">
+            <mat-card-header class="product-card-header">
+                <mat-card-title class="product-card-title">{{product.name}}</mat-card-title>
+                <mat-card-subtitle>{{product.partNumber}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-divider inset></mat-divider>
+            <img mat-card-image src="{{product.photo450}}" alt="{{product.name}}">
+            <mat-card-content>
+                <p>
+                    {{product.description}}
+                </p>
+            </mat-card-content>
+            <mat-divider inset></mat-divider>
+            <mat-card-actions>
+                <a mat-button routerLink="/products/{{product._id}}/detail">Ver</a>
+                <div class="product-card-title">{{product.price | currency: 'PEN' : 'symbol' : '1.0-0'}}</div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
