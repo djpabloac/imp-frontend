@@ -1,9 +1,18 @@
+const express = require("express");
+const path = require("path");
+
+// Running PORT is set automatically by App Engine
+const port = process.env.PORT || 3000;
 const app = express();
 
-app.use(express.static(__dirname+'/dist/imp-frontend'));
+const publicPath = path.join(__dirname, "/dist/imp-frontend");
 
-app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/dist/imp-frontend/index.html'));
+app.use(express.static(publicPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/dist/imp-frontend/index.html"));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(port, () => {
+  console.log(`Server is up on ${port}`);
+});
