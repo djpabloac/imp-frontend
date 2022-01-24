@@ -1,2 +1,10 @@
+env: standard
 runtime: nodejs14
 service: default
+
+handlers:
+- url: /
+  static_files: dist/imp-frontend/index.html
+  upload: dist/imp-frontend/index.html
+- url: /
+  static_dir: dist/imp-frontend
