@@ -1,0 +1,21 @@
+.cards {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.cards__item {
+    flex-basis: 25%;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 12px;
+}
+
+.cardPoint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
