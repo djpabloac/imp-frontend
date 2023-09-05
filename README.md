@@ -1,6 +1,6 @@
 # imp-frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+Imp-frontend was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4., the following project was built for a technical test.
 
 ## Authors
 
